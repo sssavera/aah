@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity(), WordListAdapter.onItemClick {
 
     private val newWordActivityRequest = 1
     private val changeActivity = 2
+    private val searchActivity = 3
     private lateinit var wordViewModel: WordViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,6 +38,12 @@ class MainActivity : AppCompatActivity(), WordListAdapter.onItemClick {
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity, NewWordActivity::class.java)
             startActivityForResult(intent, newWordActivityRequest)
+        }
+
+        val search = findViewById<FloatingActionButton>(R.id.search)
+        search.setOnClickListener {
+            val intent = Intent(this@MainActivity, SearchActivity::class.java)
+            startActivityForResult(intent, searchActivity)
         }
     }
 
@@ -84,7 +91,21 @@ class MainActivity : AppCompatActivity(), WordListAdapter.onItemClick {
                 Toast.LENGTH_LONG
             ).show()
                }
-        }
+/**            searchActivity ->
+                if (requestCode == searchActivity && resultCode == Activity.RESULT_OK) {
+                    intentData?.let { data ->
+                        val name = intent.getStringExtra("find")
+                        wordViewModel.find(name)
+                        Unit
+                    }
+                } else {
+                    Toast.makeText(
+                        applicationContext,
+                        "Welcome back",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+*/        }
     }
 
     override fun MyClick(word: Word) {

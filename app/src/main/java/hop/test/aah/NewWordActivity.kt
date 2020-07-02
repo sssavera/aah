@@ -69,16 +69,18 @@ class NewWordActivity : AppCompatActivity() {
         }
 
         val image = data?.data
-        val resolver = applicationContext.contentResolver
-        val flags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or
-                Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-         resolver.takePersistableUriPermission(image!!, flags)
+//        val resolver = applicationContext.contentResolver
+//        val flags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or
+//                Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+//         resolver.takePersistableUriPermission(image!!, flags)
 
-        Log.e("resolv", resolver.toString())
+//        Log.e("resolv", resolver.toString())
 
 //        edit_image.setImageURI(Uri.parse(image.toString()))
-        getBitmapFromUri(image)
-        edit_image.setImageBitmap(getBitmapFromUri(image))
+//        getBitmapFromUri(image)
+//        edit_image.setImageBitmap(getBitmapFromUri(image))
+
+        edit_image.setImageURI(image)
 
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
@@ -95,7 +97,7 @@ class NewWordActivity : AppCompatActivity() {
                 replyIntent.putExtra(EXTRA_NAME, name)
                     .putExtra(EXTRA_PRICE, price)
                     .putExtra(EXTRA_DESC, desc)
-                    .putExtra(EXTRA_IMAGE, resolver.toString())
+                    .putExtra(EXTRA_IMAGE, image.toString())
                 setResult(Activity.RESULT_OK, replyIntent)
                 finish()
             }
@@ -103,7 +105,7 @@ class NewWordActivity : AppCompatActivity() {
 
         super.onActivityResult(requestCode, resultCode, data)
     }
-
+/*
     @Throws(IOException::class)
     fun getBitmapFromUri(uri: Uri): Bitmap {
         val parcelFileDescriptor: ParcelFileDescriptor? =
@@ -113,6 +115,8 @@ class NewWordActivity : AppCompatActivity() {
         parcelFileDescriptor.close()
         return image
     }
+
+ */
 
     fun pickImage() {
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)

@@ -12,4 +12,8 @@ class WordRepository (private val wordDao: WordDao) {
     suspend fun update(word: Word) {
         wordDao.update(word)
     }
+
+    suspend fun find(name: String) {
+        wordDao.find(name)
+    }
 }

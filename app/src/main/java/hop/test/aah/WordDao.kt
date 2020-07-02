@@ -14,6 +14,9 @@ interface WordDao {
     @Update
     fun update(word: Word)
 
+    @Query("SELECT * FROM shop WHERE name LIKE :name")
+    fun find(name: String): LiveData<List<Word>>
+
     @Query("DELETE FROM shop")
     fun deleteAll()
 }

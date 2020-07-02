@@ -24,4 +24,8 @@ class WordViewModel (application: Application): AndroidViewModel(application) {
     fun update(word: Word) = viewModelScope.launch(Dispatchers.IO) {
         repository.update(word)
     }
+
+    fun find(name: String) = viewModelScope.launch(Dispatchers.IO) {
+        repository.find(name)
+    }
 }
