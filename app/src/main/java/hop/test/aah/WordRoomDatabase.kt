@@ -48,13 +48,6 @@ abstract class WordRoomDatabase: RoomDatabase() {
 
         fun populateDatabase(wordDao: WordDao) {
             wordDao.deleteAll()
-/*
-            var word = Word("hel", "qwe", "1")
-            wordDao.insert(word)
-            word = Word("wec","asd", "2")
-            wordDao.insert(word)
-
- */
         }
     }
 }

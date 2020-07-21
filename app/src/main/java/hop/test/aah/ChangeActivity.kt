@@ -24,32 +24,33 @@ class ChangeActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change)
 
-        var name = intent.getStringExtra("name")
-        var desc = intent.getStringExtra("desc")
-        var price = intent.getStringExtra("price")
-        var image = intent.getStringExtra("image")
+        val name = intent.getStringExtra("name")
+        val desc = intent.getStringExtra("desc")
+        val price = intent.getStringExtra("price")
+        val image = intent.getStringExtra("image")
 
-        var item =  Word(name, desc, price, image)
+        val item =  Word(name, desc, price, image)
 
         val contentResolver = applicationContext.contentResolver
         val flags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or
                 Intent.FLAG_GRANT_WRITE_URI_PERMISSION
-        var uri = Uri.parse(item.image)
+        val uri = Uri.parse(item.image)
         contentResolver.takePersistableUriPermission(uri, flags)
 
         Log.e("URI: ", uri.toString())
 
-        var changename: TextView = findViewById(R.id.change_name)
-        var changedesc: TextView = findViewById(R.id.change_desc)
-        var changeprice: TextView = findViewById(R.id.change_price)
-        var changeimage: ImageView = findViewById(R.id.change_image)
+        val changename: TextView = findViewById(R.id.change_name)
+        val changedesc: TextView = findViewById(R.id.change_desc)
+        val changeprice: TextView = findViewById(R.id.change_price)
+        val changeimage: ImageView = findViewById(R.id.change_image)
 
         Log.e("item.image", item.image)
 
-        changename.text = name.toString()
-        changedesc.text = desc.toString()
-        changeprice.text = price.toString()
-        changeimage.setImageBitmap(getBitmapFromUri(uri))
+        changename.text = name?.toString()
+        changedesc.text = desc?.toString()
+        changeprice.text = price?.toString()
+//        changeimage.setImageBitmap(getBitmapFromUri(uri))
+        changeimage.setImageURI(uri)
 
         save_changes.setOnClickListener {
             val replyIntent = Intent()
@@ -72,7 +73,7 @@ class ChangeActivity: AppCompatActivity() {
             finish()
         }
     }
-
+/*
     @Throws(IOException::class)
     fun getBitmapFromUri(uri: Uri): Bitmap {
         val parcelFileDescriptor: ParcelFileDescriptor? =
@@ -82,7 +83,7 @@ class ChangeActivity: AppCompatActivity() {
         parcelFileDescriptor.close()
         return image
     }
-
+*/
     companion object {
         const val CHANGED_NAME = "changename"
         const val CHANGED_DESC = "changedesc"

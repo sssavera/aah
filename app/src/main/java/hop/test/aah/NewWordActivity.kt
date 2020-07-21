@@ -35,22 +35,6 @@ class NewWordActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.button_save)
         button.setOnClickListener {
-/*
-            val replyIntent = Intent()
-            if (TextUtils.isEmpty(editWordView.text)) {
-                setResult(Activity.RESULT_CANCELED, replyIntent)
-            } else {
-                val name = editWordView.text.toString()
-                val desc = edit_desc.text.toString()
-                val price = edit_price.text.toString()
-
-                replyIntent.putExtra(EXTRA_NAME, name)
-                    .putExtra(EXTRA_PRICE, price)
-                    .putExtra(EXTRA_DESC, desc)
-                setResult(Activity.RESULT_OK, replyIntent)
-            }
-
- */
             Toast.makeText(this, "Pick image", Toast.LENGTH_LONG).show()
         }
 

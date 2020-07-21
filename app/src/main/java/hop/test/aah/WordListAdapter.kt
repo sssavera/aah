@@ -23,7 +23,7 @@ class WordListAdapter internal constructor(
         val showImage: ImageView = itemView.findViewById(R.id.showImage)
 
         fun bind(word: Word, click: onItemClick) {
-            wordItemView.text = "Name: ${word.name} + Price: ${word.price}"
+            wordItemView.text = "Name: ${word.name} Price: ${word.price}"
             showImage.setImageURI(Uri.parse(word.image))
 //            priceItemView.text = word.price
             itemView.setOnClickListener {
