@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">aah</string>
+    <string name="takeimage">Tap here</string>
+    <string name="error">Error</string>
+    <string name="back">Returned</string>
+    <string name="empty">Field is empty</string>
+    <string name="save">Save</string>
+    <string name="change">Change</string>
+    <string name="word">Word</string>
+    <string name="desc">Desc</string>
+    <string name="price">Price</string>
 </resources>

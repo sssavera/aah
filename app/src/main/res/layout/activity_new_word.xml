@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:hint="Word"
+        android:autofillHints="@string/word"
+        android:hint="@string/word"
         android:layout_margin="4dp"
         android:inputType="textAutoComplete"
         android:textSize="18sp"/>
@@ -20,7 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:hint="Desc"
+        android:autofillHints="@string/word"
+        android:hint="@string/desc"
         android:layout_margin="4dp"
         android:inputType="textAutoComplete"
         android:textSize="18sp"/>
@@ -30,7 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="48dp"
-        android:hint="Price"
+        android:autofillHints="@string/word"
+        android:hint="@string/price"
         android:layout_margin="4dp"
         android:inputType="textAutoComplete"
         android:textSize="18sp"/>
@@ -40,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:minHeight="48dp"
-        android:hint="Price"
+        android:contentDescription="@string/takeimage"
         android:layout_margin="4dp"
         android:inputType="textAutoComplete"
         android:textSize="18sp"/>
@@ -50,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:text="Save"
+        android:text="@string/save"
         android:textColor="#FFFFFF"
         android:layout_margin="16dp"/>
 
