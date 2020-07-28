@@ -52,37 +52,37 @@ abstract class WordRoomDatabase: RoomDatabase() {
             var item = Word("Apple iPod touch 5 32Gb",
             "5 шт",
             "8888",
-            "content://com.android.providers.media.documents/document/image%3A57")
+            "")
             wordDao.insert(item)
 
             item = Word("Samsung Galaxy S Duos S7562",
                 "2 шт",
                 "7230",
-                "content://com.android.providers.media.documents/document/image%3A57")
+                "")
             wordDao.insert(item)
 
             item = Word("Canon EOS 600D Kit",
                 "9 шт",
                 "15659",
-                "content://com.android.providers.media.documents/document/image%3A57")
+                "")
             wordDao.insert(item)
 
             item = Word("Samsung Galaxy Tab 2 10.1 P5100 16Gb",
                 "9 шт",
                 "13290",
-                "content://com.android.providers.media.documents/document/image%3A57")
+                "")
             wordDao.insert(item)
 
             item = Word("PocketBook Touch",
                 "2 шт",
                 "5197",
-                "content://com.android.providers.media.documents/document/image%3A57")
+                "")
             wordDao.insert(item)
 
             item = Word("Nikon D3100 Kit",
                 "4 шт",
                 "12190",
-                "content://com.android.providers.media.documents/document/image%3A57")
+                "")
             wordDao.insert(item)
         }
     }
