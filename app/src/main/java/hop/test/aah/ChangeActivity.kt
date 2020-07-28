@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_new_word.*
 import java.io.FileDescriptor
 import java.io.IOException
 
+@Suppress("NAME_SHADOWING")
 class ChangeActivity: AppCompatActivity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,7 @@ class ChangeActivity: AppCompatActivity() {
         val price = intent.getStringExtra("price")
         val image = intent.getStringExtra("image")
 
-        val item =  Word(name, desc, price, image)
+        val item =  Word(name!!, desc!!, price!!, image!!)
 
         val contentResolver = applicationContext.contentResolver
         val flags: Int = Intent.FLAG_GRANT_READ_URI_PERMISSION or
@@ -46,10 +47,9 @@ class ChangeActivity: AppCompatActivity() {
 
         Log.e("item.image", item.image)
 
-        changename.text = name?.toString()
-        changedesc.text = desc?.toString()
-        changeprice.text = price?.toString()
-//        changeimage.setImageBitmap(getBitmapFromUri(uri))
+        changename.text = name.toString()
+        changedesc.text = desc.toString()
+        changeprice.text = price.toString()
         changeimage.setImageURI(uri)
 
         save_changes.setOnClickListener {
