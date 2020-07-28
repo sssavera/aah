@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:src="@drawable/ic_baseline_search_24"
-        android:contentDescription="Add word"/>
+        android:contentDescription="@string/add"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -36,6 +36,6 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_add_circle_24"
         android:layout_margin="16dp"
-        android:contentDescription="Add word"/>
+        android:contentDescription="@string/add"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

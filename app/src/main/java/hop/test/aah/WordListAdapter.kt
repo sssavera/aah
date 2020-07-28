@@ -19,13 +19,11 @@ class WordListAdapter internal constructor(
 
     inner class WordViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val wordItemView: TextView = itemView.findViewById(R.id.textView)
-//        val priceItemView: TextView = itemView.findViewById(R.id.priceTextView)
         val showImage: ImageView = itemView.findViewById(R.id.showImage)
 
         fun bind(word: Word, click: onItemClick) {
-            wordItemView.text = "Name: ${word.name} Price: ${word.price}"
+            wordItemView.text = "Name: ${word.name} Price: ${word.price} Amount: ${word.desc}"
             showImage.setImageURI(Uri.parse(word.image))
-//            priceItemView.text = word.price
             itemView.setOnClickListener {
                 click.MyClick(word)
             }
